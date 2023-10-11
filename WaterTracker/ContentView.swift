@@ -6,21 +6,47 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+    let appTitle: String = "Water tracker 💦"
+    @State var allowSharingAppleHealthData :Bool = false
+    @State var noOfCubs: Int = 0
+    @State var showWaterCupsView :Bool = false
+
+var body: some View {
+        NavigationStack{
+            VStack(spacing: 24){
+                Text(appTitle)
+                    .bold()
+                    .font(.title3)
+
+                Toggle("Apple health", isOn: $allowSharingAppleHealthData)
+
+                Stepper {
+                    Text("Cups to drink per day \(noOfCubs)")
+                } onIncrement: {
+                    noOfCubs += 1
+                } onDecrement: {
+                    noOfCubs -= 1
+                }
+
+                Button {
+                    showWaterCupsView.toggle()
+                } label: {
+                    Text("Continue")
+
+                }
+            }
+            .navigationTitle("Water Tracker")
         }
         .padding()
+        .fullScreenCover(isPresented: $showWaterCupsView) {
+            WaterUnitsView()
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+
+
+#Preview {
+    ContentView()
 }

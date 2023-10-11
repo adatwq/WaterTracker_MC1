@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF8278682AD5198400E2F530 /* WaterUnitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8278672AD5198400E2F530 /* WaterUnitsView.swift */; };
 		DFA933222AD29DFC00A296F6 /* WaterTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA933212AD29DFC00A296F6 /* WaterTrackerApp.swift */; };
 		DFA933242AD29DFC00A296F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA933232AD29DFC00A296F6 /* ContentView.swift */; };
 		DFA933262AD29DFD00A296F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA933252AD29DFD00A296F6 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF8278672AD5198400E2F530 /* WaterUnitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterUnitsView.swift; sourceTree = "<group>"; };
 		DFA9331E2AD29DFC00A296F6 /* WaterTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA933212AD29DFC00A296F6 /* WaterTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTrackerApp.swift; sourceTree = "<group>"; };
 		DFA933232AD29DFC00A296F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				DFA933212AD29DFC00A296F6 /* WaterTrackerApp.swift */,
 				DFA933232AD29DFC00A296F6 /* ContentView.swift */,
+				DF8278672AD5198400E2F530 /* WaterUnitsView.swift */,
 				DFA933252AD29DFD00A296F6 /* Assets.xcassets */,
 				DFA933272AD29DFD00A296F6 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8278682AD5198400E2F530 /* WaterUnitsView.swift in Sources */,
 				DFA933242AD29DFC00A296F6 /* ContentView.swift in Sources */,
 				DFA933222AD29DFC00A296F6 /* WaterTrackerApp.swift in Sources */,
 			);
