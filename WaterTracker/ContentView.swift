@@ -24,9 +24,9 @@ var body: some View {
                 Stepper {
                     Text("Cups to drink per day \(noOfCubs)")
                 } onIncrement: {
-                    noOfCubs += 1
+                    increment()
                 } onDecrement: {
-                    noOfCubs -= 1
+                    decrement()
                 }
 
                 Button {
@@ -40,9 +40,18 @@ var body: some View {
         }
         .padding()
         .fullScreenCover(isPresented: $showWaterCupsView) {
-            WaterUnitsView()
+            WaterCupsView(noOfCups: noOfCubs, showWaterCupsView: $showWaterCupsView)
         }
     }
+    
+    func increment(){
+        noOfCubs += 1
+    }
+    
+    func decrement(){
+        noOfCubs -= 1
+    }
+    
 }
 
 

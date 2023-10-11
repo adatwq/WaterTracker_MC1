@@ -7,12 +7,47 @@
 
 import SwiftUI
 
-struct WaterUnitsView: View {
+struct WaterCupsView: View {
+    let noOfCups: Int
+    @Binding var showWaterCupsView :Bool
+    @State var selectedCups: [Int] = []
     var body: some View {
-        Text("Water cups view 💧")
+        VStack{
+            HStack{
+                Button {
+                    showWaterCupsView.toggle()
+                } label: {
+                    Image(systemName: "x.circle.fill")
+                        .font(.title)
+                        .foregroundColor(.blue)
+                        .padding()
+                }
+                Spacer()
+
+            }
+            Spacer()
+            HStack{
+                ForEach(0..<noOfCups,id: \.self) { i in
+                    Image(systemName: selectedCups.contains(i) ? "drop.fill" : "drop")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                            .onTapGesture {
+                                if selectedCups.contains(i){
+                                    selectedCups.removeAll {$0 == i}
+                                }
+                                else{
+                                    selectedCups.append(i)
+                                }
+                               
+                            }
+
+                }
+            }
+            Spacer()
+        }
+
     }
 }
-
 #Preview {
-    WaterUnitsView()
+    WaterCupsView(noOfCups: 9, showWaterCupsView: .constant(true))
 }
